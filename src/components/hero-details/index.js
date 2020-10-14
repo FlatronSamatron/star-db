@@ -1,10 +1,11 @@
 
 import React, { Component } from 'react';
 import SwapiService from '../../services/'
+import {withRouter} from 'react-router-dom'
 
 import './hero-details.css';
 
-export default class PersonDetails extends Component {
+class PersonDetails extends Component {
 
   swapiService = new SwapiService()
 
@@ -16,15 +17,22 @@ export default class PersonDetails extends Component {
     this.updateHero()
   }
 
-  componentDidUpdate(prevProps){
+  componentDidUpdate(prevProps,prevState){
     if(prevProps.personId !== this.props.personId){
       this.updateHero()
     }
   }
 
+  // componentDidUpdate(prevProps,prevState){
+  //   if(prevState.hero !== this.state.hero){
+  //     this.updateHero()
+  //   }
+  // }
+
   updateHero(){
+    const {id} = this.props.match.params
     const {personId,getData} = this.props;
-   
+    
     if(!personId){
       return
     }
@@ -72,3 +80,5 @@ export default class PersonDetails extends Component {
     )
   }
 }
+
+export default withRouter(PersonDetails)

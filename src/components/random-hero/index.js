@@ -14,7 +14,7 @@ export default class extends Component {
     }
 
     componentDidMount(){
-      setInterval(()=>this.updateHero(), 100000)
+      setInterval(()=>this.updateHero(), 2500)
     }
 
     onHeroLoaded = (hero) => {

@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import SwapiService from '../../services/'
 
 import './pagination.css';
 
 export default class extends Component {
 
-  // swapiService = new SwapiService()
 
   state = {
     heroList: this.props.heroList,
@@ -35,7 +33,7 @@ export default class extends Component {
                 {i-7}-{i+1}
             </li>)
       }
-      if(i%10 == 0 && i!=0){
+      if(i%10 === 0 && i!==0){
         pag.push(<li key = {i} 
             className= {i === active ? "list-group-item pag active" : "list-group-item pag"} 
             onClick={(el)=>this.activeLi(el.target,i)}>

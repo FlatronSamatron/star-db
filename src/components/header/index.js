@@ -1,24 +1,29 @@
 import React from 'react'
+import {Link,NavLink} from 'react-router-dom'
 
 import './header.css'
 
 export default () => {
+
     return(
     <div className="header d-flex">
         <h3>
-            <a href="#">
-            Star DB
-            </a>
+            <Link to="/">
+            Dota-HeroDB
+            </Link>
         </h3>
-        <ul className="d-flex">
+        <ul className="d-flex nav">
             <li>
-            <a href="#">People</a>
+            <NavLink to="/heroes/" activeClassName="active">All Heroes</NavLink>
             </li>
             <li>
-            <a href="#">Planets</a>
+            <NavLink to="/agiheroes/" activeClassName="active">Agility Heroes</NavLink>
             </li>
             <li>
-            <a href="#">Starships</a>
+            <NavLink to="/strheroes/" activeClassName="active">Strength Heroes</NavLink>
+            </li>
+            <li>
+            <NavLink to="/intheroes/" activeClassName="active">Intelligent Heroes</NavLink>
             </li>
         </ul>
     </div>

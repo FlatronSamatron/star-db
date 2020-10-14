@@ -6,7 +6,7 @@ export default ({hero}) => {
     return(
         <>
         <img className="planet-image"
-                src={img} />
+                src={img} alt ='img' />
             <div>
             <h4>{name}</h4>
             <ul className="list-group list-group-flush">

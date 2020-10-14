@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import Spinner from '../spinner/'
 import Pagination from '../pagination/'
 import img from './dota-2.png'
+import {withRouter} from 'react-router-dom'
 
 import './item-list.css';
 
-export default class extends Component {
+class ItemList extends Component {
 
   
 
@@ -33,7 +34,7 @@ export default class extends Component {
         onClick={()=>this.props.heroSelected(id)}
         >
           {name}
-          <img style={{marginLeft:'auto'}} src={id === 126 || id === 128 ? img : icon}/>
+          <img style={{marginLeft:'auto'}} src={id === 126 || id === 128 ? img : icon} alt="img"/>
         </li>
         )
       })
@@ -83,3 +84,5 @@ export default class extends Component {
     );
   }
 }
+
+export default withRouter(ItemList)
