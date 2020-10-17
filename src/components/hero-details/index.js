@@ -30,7 +30,7 @@ class PersonDetails extends Component {
   // }
 
   updateHero(){
-    const {id} = this.props.match.params
+    // const {id} = this.props.match.params
     const {personId,getData} = this.props;
     
     if(!personId){
